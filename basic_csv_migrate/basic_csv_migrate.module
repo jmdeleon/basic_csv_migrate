@@ -1,0 +1,21 @@
+<?php
+/*
+ * Impmentation of hook_migrate_api()
+ */
+function basic_csv_migrate_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'groups' => array(
+      'BasicCSVMigrate' => array(
+        'title' => t('Basic CSV Migrations'),
+      ),
+    ),
+    'migrations' => array(
+      'News' => array(
+        'class_name' => 'NewCSVMigration',
+        'group_name' => 'BasicCSVMigrate',
+      ),
+    ),
+  );
+  return $api;
+}

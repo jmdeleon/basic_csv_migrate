@@ -1,0 +1,7 @@
+name = "Basic CSV Migrate"
+description = "Basic Migration of CSV data to Drupal"
+package = "Migration"
+core = 7.x
+version = 7.x-1.x-alpha1
+dependencies[] = migrate
+files[] = new_csv.inc
