@@ -18,7 +18,8 @@ class NewCSVMigration extends Migration {
     );
 
     // The source (CSV file) of the import
-    $this->source = new MigrateSourceCSV(DRUPAL_ROOT . '/sites/all/modules/basic_csv_migrate/new_items.csv', $columns, array('delimiter' => '|', 'header_rows' => 1));
+    $csvfile = drupal_get_path('module', 'basic_csv_migrate') . '/new_items.csv';
+    $this->source = new MigrateSourceCSV($csvfile, $columns, array('delimiter' => '|', 'header_rows' => 1));
 
     // Source and destination relation for rollbacks
     // Set up the key (source) field for rollbacks
